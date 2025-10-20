@@ -8,6 +8,8 @@ For the paper: Batch Speculative Decoding Done Right
 ```bash
 pip install -r requirements.txt
 # make sure you use transformers==4.51.3. They later redesign the KV cache API and it won't work.
+# Also for sglang use the requirements_sglang.txt"
+
 ```
 
 ## Key Files
