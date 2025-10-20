@@ -1,0 +1,17 @@
+# Core ML/AI packages
+torch==2.8.0
+transformers==4.51.3
+accelerate==1.10.1
+sglang==0.5.3.post3
+
+# Data processing and utilities
+tqdm==4.67.1
+pandas==2.2.3
+numpy==1.26.4
+
+# Visualization (for analysis scripts)
+matplotlib==3.10.3
+seaborn==0.13.2
+
+# Standard library (not needed in requirements.txt, but listed here for completeness)
+# json, time, typing, pathlib, os, argparse, csv, glob - these are built-in
