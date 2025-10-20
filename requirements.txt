@@ -1,6 +1,6 @@
 # Core ML/AI packages
 torch==2.7.0
-transformers==4.51.3
+transformers==4.53.0
 vllm==0.9.1
 accelerate==1.10.1
 

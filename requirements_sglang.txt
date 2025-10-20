@@ -1,6 +1,6 @@
 # Core ML/AI packages
 torch==2.8.0
-transformers==4.51.3
+transformers==4.53.0
 accelerate==1.10.1
 sglang==0.5.3.post3
 
