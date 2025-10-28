@@ -1,8 +1,10 @@
 
 
-# Batch Speculative Decoding
+# [Batch Speculative Decoding Done Right](https://arxiv.org/pdf/2510.22876)
 
-For the paper: Batch Speculative Decoding Done Right
+![alt text](assets/batch_spec_intro.png)
+
+This paper shows that existing batch speculative decoding implementations violate output equivalence due to improper handling of the "ragged tensor problem" (where sequences accept different numbers of draft tokens), and proposes EQSPEC, a correctness-first solution, along with EXSPEC, which uses a sliding pool of sequences to maintain correctness while improving efficiency.
 
 ## Environment Setup
 ```bash
