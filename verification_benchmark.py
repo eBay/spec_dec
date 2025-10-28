@@ -8,7 +8,7 @@ python verification_benchmark.py --input_file data/spec_bench/question.jsonl --n
 """
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Set the GPU devices to use
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Set the GPU devices to use
 import argparse
 import json
 import time
@@ -64,17 +64,6 @@ MODEL_CONFIGS = {
         "draft": "double7/vicuna-68m",
         "name": "Vicuna"
     },
-    # "gemma": {
-    #     "target": "google/gemma-3-12b-it",
-    #     "draft": "google/gemma-3-270m-it",
-    #     "name": "Gemma"
-    # },
-    # "llama": {
-    #     "target": "meta-llama/Llama-3.1-8B-Instruct",
-    #     # "draft": "meta-llama/Llama-3.2-1B",
-    #     "draft": "OpenVINO/Llama-3.1-8B-Instruct-FastDraft-150M-int8-ov",
-    #     "name": "Llama"
-    # },
     "glm4": {
         "target": "zai-org/GLM-4-9B-0414",
         "draft": "jukofyork/GLM-4.5-DRAFT-0.6B-v3.0",
@@ -376,11 +365,9 @@ def main():
                         help="Number of prompts to use (None for all)")
     
     # Model configuration
-    # parser.add_argument("--models", nargs="+", choices=list(MODEL_CONFIGS.keys()),
-    #                     default=["llama", "qwen"],
-    #                     help="Model pairs to evaluate")
+
     parser.add_argument("--models", nargs="+", choices=list(MODEL_CONFIGS.keys()),
-                        default=["llama", "gemma", "mistral", "glm4"],
+                        default=["qwen", "vicuna", "glm4"],
                         help="Model pairs to evaluate")
     parser.add_argument("--device", type=str, default="cuda:0",
                         help="Device to run on")

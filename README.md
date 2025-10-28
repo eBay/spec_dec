@@ -6,10 +6,11 @@ For the paper: Batch Speculative Decoding Done Right
 
 ## Environment Setup
 ```bash
-pip install -r requirements.txt
+uv venv --python 3.12
+source .venv/bin/activate
+uv pip install -r requirements.txt
 # make sure you use transformers==4.51.3. They later redesign the KV cache API and it won't work.
 # Also for sglang use the requirements_sglang.txt"
-
 ```
 
 ## Key Files
@@ -31,11 +32,11 @@ pip install -r requirements.txt
 Inference: 
 ```bash
 # EXSPEC 
-CUDA_VISIBLE_DEVICES=0 python unified_benchmark.py --methods Ours-XBatch --input_file data/spec_bench/question.jsonl --num_prompts 100 --max_new_tokens 128 --n_draft_tokens 5 --batch_size 16 --window_size 48 --scheduling_strategy cross_batch --sort_by_length
+CUDA_VISIBLE_DEVICES=0 python unified_benchmark.py --methods Ours-XBatch --input_file data/spec_bench/question.jsonl --num_prompts 100 --max_new_tokens 128 --n_draft_tokens 5 --batch_size 16 --window_size 48 --scheduling_strategy cross_batch --sort_by_length --target_model lmsys/vicuna-7b-v1.3 --draft_model double7/vicuna-68m
 
 
 # EQSPEC 
-CUDA_VISIBLE_DEVICES=0 python unified_benchmark.py --methods Ours-Batch-Cache --input_file data/spec_bench/question.jsonl --num_prompts 100 --max_new_tokens 128 --n_draft_tokens 5 --batch_size 16 --enable_profiling
+CUDA_VISIBLE_DEVICES=0 python unified_benchmark.py --methods Ours-Batch-Cache --input_file data/spec_bench/question.jsonl --num_prompts 100 --max_new_tokens 128 --n_draft_tokens 5 --batch_size 16 --enable_profiling --target_model lmsys/vicuna-7b-v1.3 --draft_model double7/vicuna-68m
 
 ```
 verification experiment:
@@ -44,6 +45,19 @@ verification experiment:
 python verification_benchmark.py --input_file data/spec_bench/question.jsonl --num_prompts 480 --models glm4 --batch_sizes 4 8 --max_new_tokens 50 --output_dir test_verification
 ```
 
+We support the following models:
+```bash
+declare -A TARGET_MODELS=(
+    ["qwen"]="Qwen/Qwen3-8B"
+    ["vicuna"]="lmsys/vicuna-7b-v1.3"
+    ["glm4"]="zai-org/GLM-4-9B-0414"
+)
+declare -A DRAFT_MODELS=(
+    ["qwen"]="Qwen/Qwen3-0.6B"
+    ["vicuna"]="double7/vicuna-68m"
+    ["glm4"]="jukofyork/GLM-4.5-DRAFT-0.6B-v3.0"
+)
+```
 ---
 ## Bibtex
 
