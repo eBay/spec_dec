@@ -47,7 +47,18 @@ python verification_benchmark.py --input_file data/spec_bench/question.jsonl --n
 ---
 ## Bibtex
 
-TBD
+```bibtex
+@misc{zhang2025batchspeculativedecodingright,
+      title={Batch Speculative Decoding Done Right}, 
+      author={Ranran Haoran Zhang and Soumik Dey and Ashirbad Mishra and Hansi Wu and Binbin Li and Rui Zhang},
+      year={2025},
+      eprint={2510.22876},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.22876}, 
+}
+```
+
 
 
 ## License
