@@ -427,7 +427,7 @@ def main():
         _, _, tokenizer, _ = setup_models(model_pair, args.device)
         
         # Define methods to test
-        # methods_batch1 = ["HF-Spec-1", "Ours-Batch", "Ours-XBatch", "DSD", "BSP"]
+        methods_batch1 = ["HF-Spec-1", "Ours-Batch", "Ours-XBatch", "DSD", "BSP"]
         # methods_batch1 = ["Ours-Batch", "Ours-XBatch"]
         # methods_batch1 = ["DSD", "Non-Spec-Batch", "Ours-Batch", "Ours-XBatch", "BSP"]
         # methods_batch1 = ["DSD", "HF-Spec-1"]

@@ -22,3 +22,6 @@ ENV/
 
 # Jupyter
 .ipynb_checkpoints/
+
+results
+benchmark_results
