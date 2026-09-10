@@ -1,10 +1,26 @@
 
 
-# [Batch Speculative Decoding Done Right](https://arxiv.org/pdf/2510.22876)
+## Correctness Forensics for Batch Speculative Decoding: Diagnosing the Ragged Tensor Problem
+
+Source code for EMNLP-Findings 2026 paper [Paper](https://arxiv.org/pdf/2510.22876)
 
 ![alt text](assets/batch_spec_intro.png)
 
 This paper shows that existing batch speculative decoding implementations violate output equivalence due to improper handling of the "ragged tensor problem" (where sequences accept different numbers of draft tokens), and proposes EQSPEC, a correctness-first solution, along with EXSPEC, which uses a sliding pool of sequences to maintain correctness while improving efficiency.
+
+## Bibtex
+
+```bibtex
+@misc{zhang2026correctnessforensicsbatchspeculative,
+      title={Correctness Forensics for Batch Speculative Decoding: Diagnosing the Ragged Tensor Problem}, 
+      author={Ranran Haoran Zhang and Soumik Dey and Ashirbad Mishra and Hansi Wu and Binbin Li and Rui Zhang},
+      year={2026},
+      eprint={2510.22876},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.22876}, 
+}
+```
 
 ## Environment Setup
 ```bash
@@ -61,19 +77,7 @@ declare -A DRAFT_MODELS=(
 )
 ```
 ---
-## Bibtex
 
-```bibtex
-@misc{zhang2025batchspeculativedecodingright,
-      title={Batch Speculative Decoding Done Right}, 
-      author={Ranran Haoran Zhang and Soumik Dey and Ashirbad Mishra and Hansi Wu and Binbin Li and Rui Zhang},
-      year={2025},
-      eprint={2510.22876},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2510.22876}, 
-}
-```
 
 
 
